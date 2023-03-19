@@ -4362,6 +4362,10 @@ bool ImGui::InputTextEx(const char* label, const char* hint, char* buf, int buf_
                     clear_active_id = true;
                 }
             }
+            if (flags & ImGuiInputTextFlags_EscapeDeactivateOnly)
+            {
+                render_cursor = render_selection = false;
+            }
             else
             {
                 clear_active_id = revert_edit = true;
